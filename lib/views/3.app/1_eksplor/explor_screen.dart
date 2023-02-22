@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nusantrip/views/3.app/1_eksplor/trip_search_screen.dart';
+import 'package:nusantrip/views/3.app/nusanpay/nusanpay_list_screen.dart';
 import 'package:nusantrip/views/3.app/widget/ticket_detail_screen.dart';
 
 import '../../../styles/styles.dart';
@@ -78,53 +80,66 @@ class ExplorScreen extends StatelessWidget {
   }
 
   Widget infoUser(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/account_info_background.png"),
-            fit: BoxFit.cover),
-      ),
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            "Welcome,",
-            style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w600, color: Colors.white),
-          ),
-          const SizedBox(
-            height: 4,
-          ),
-          Text(
-            "Benny Septiawan Salim",
-            style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          Text(
-            "Nusanpay",
-            style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w600, color: Colors.white, fontSize: 10),
-          ),
-          const SizedBox(
-            height: 4,
-          ),
-          Text(
-            "Rp 20.000.000,00",
-            style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w600, color: Colors.white, fontSize: 15),
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pushNamed(NusanpayListScreen.routeName);
+      },
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/account_info_background.png"),
+              fit: BoxFit.cover),
+        ),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              "Welcome,",
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w600, color: Colors.white),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Text(
+              "Benny Septiawan Salim",
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Text(
+              "Nusanpay",
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                  fontSize: 10),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Text(
+              "Rp 20.000.000,00",
+              style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                  fontSize: 15),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget searchBar(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).pushNamed(TripSearchScreen.routeName);
+      },
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(

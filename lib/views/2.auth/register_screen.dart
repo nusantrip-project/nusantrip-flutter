@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nusantrip/styles/styles.dart';
 
 import '../1.intro/onboarding_screen.dart';
-import 'biodata_screen.dart';
+import '../3.app/bottomnav_widget.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -75,6 +75,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             TextField(
               style: GoogleFonts.montserrat(fontSize: 14),
+              decoration: InputDecoration(
+                hintText: "First Name",
+                hintStyle: GoogleFonts.montserrat(fontSize: 14),
+              ),
+            ),
+            TextField(
+              style: GoogleFonts.montserrat(fontSize: 14),
+              decoration: InputDecoration(
+                hintText: "Last Name",
+                hintStyle: GoogleFonts.montserrat(fontSize: 14),
+              ),
+            ),
+            TextField(
+              style: GoogleFonts.montserrat(fontSize: 14),
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 hintText: "Email",
@@ -122,7 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(BiodataScreen.routeName);
+                Navigator.of(context).pushNamed(BottomNavWidget.routeName);
               },
               style: Styles.primaryButton,
               child: const Text(
